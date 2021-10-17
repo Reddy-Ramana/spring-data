@@ -7,7 +7,7 @@ public class Person {
 	private long id;
 	private String name;
 	private String location;
-	private Date dateOfBirth;
+	private Date birthDate;
 
 	public long getId() {
 		return id;
@@ -34,11 +34,11 @@ public class Person {
 	}
 
 	public Date getDateOfBirth() {
-		return dateOfBirth;
+		return birthDate;
 	}
 
 	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+		this.birthDate = dateOfBirth;
 	}
 
 	public Person() {
@@ -49,12 +49,12 @@ public class Person {
 		this.id = id;
 		this.name = name;
 		this.location = location;
-		this.dateOfBirth = dateOfBirth;
+		this.birthDate = dateOfBirth;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [\nid=" + id + ", name=" + name + ", location=" + location + ", dateOfBirth=" + dateOfBirth + "]";
+		return "Person [\nid=" + id + ", name=" + name + ", location=" + location + ", dateOfBirth=" + birthDate + "]";
 	}
 
 }
