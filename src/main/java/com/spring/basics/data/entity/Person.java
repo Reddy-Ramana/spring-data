@@ -2,9 +2,19 @@ package com.spring.basics.data.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@NamedQuery(name="find_all_persons",query="select p from Person p")
 public class Person {
 
-	private long id;
+	@Id
+	@GeneratedValue
+	private int id;
 	private String name;
 	private String location;
 	private Date birthDate;
@@ -13,7 +23,7 @@ public class Person {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -44,9 +54,16 @@ public class Person {
 	public Person() {
 	}
 
-	public Person(long id, String name, String location, Date dateOfBirth) {
+	public Person(int id, String name, String location, Date dateOfBirth) {
 		super();
 		this.id = id;
+		this.name = name;
+		this.location = location;
+		this.birthDate = dateOfBirth;
+	}
+	
+	public Person(String name, String location, Date dateOfBirth) {
+		super();
 		this.name = name;
 		this.location = location;
 		this.birthDate = dateOfBirth;
